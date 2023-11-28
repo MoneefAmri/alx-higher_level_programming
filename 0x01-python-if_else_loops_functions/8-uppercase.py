@@ -1,4 +1,4 @@
-#!/usr/bin/pythons3
+#!/usr/bin/python3
 def upper(c):
     if 97 <= ord(c) <= 122:
         return ord(c) - 32
