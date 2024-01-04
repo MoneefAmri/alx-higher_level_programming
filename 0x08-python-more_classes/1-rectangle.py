@@ -39,7 +39,7 @@ class Rectangle:
             Raises:
                 ValueError: If the value is less than 0.
                 TypeError: If the value is not an integer.
-            """
+        """
 
         if type(value) is int:
             if value >= 0:
@@ -69,6 +69,7 @@ class Rectangle:
                 ValueError: If the value is less than 0.
                 TypeError: If the value is not an integer.
         """
+
         if type(value) is int:
             if value >= 0:
                 self.__height = value
