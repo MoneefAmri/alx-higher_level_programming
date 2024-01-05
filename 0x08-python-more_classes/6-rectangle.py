@@ -13,7 +13,7 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """
-           Initializes an instance of the class with the given width and height.
+           Initializes an instance of the class with the width, height.
 
            Args:
                width (int): The width of the rectangle.
