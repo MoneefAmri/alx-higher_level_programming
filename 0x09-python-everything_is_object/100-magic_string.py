@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-def magic_string(lst_of_str=[]):
-    if lst_of_str is None:
-        lst_of_str = []
-    lst_of_str += ["BestSchool"]
-    return ", ".join(lst_of_str)
+def magic_string():
+    magic_string.n = getattr(magic_string, 'n', 0) + 1
+    return "BestSchool" + ", BestSchool" * (magic_string.n - 1)
