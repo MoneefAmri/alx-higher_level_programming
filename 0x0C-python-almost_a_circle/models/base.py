@@ -1,8 +1,17 @@
 #!/usr/bin/python3
-"""Module class Base"""
+"""
+Module class Base
+"""
 
 
 class Base:
+    """
+    Base class
+    Attributes:
+        __nb_objects: number of objects created
+        id: id of object
+    """
+
     __nb_objects = 0
 
     def __init__(self, id=None):
