@@ -2,6 +2,7 @@
 """
 Module class Base
 """
+import csv
 import json
 
 
