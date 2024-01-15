@@ -62,7 +62,8 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """
-        Assigns attributes to the instance based on positional and keyword arguments.
+        Assigns attributes to the instance based on positional
+        and keyword arguments.
         Args:
             *args: List of arguments (no-keyworded arguments).
             **kwargs: Dictionary of keyworded arguments.
