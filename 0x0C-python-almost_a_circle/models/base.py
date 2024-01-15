@@ -2,6 +2,7 @@
 """
 Module class Base
 """
+import csv
 import json
 
 
@@ -109,3 +110,45 @@ class Base:
                 return instances
         except FileNotFoundError:
             return []
+
+    class Base:
+        @classmethod
+        def save_to_file_csv(cls, list_objs):
+            """
+            Serializes and saves instances to a CSV file.
+
+            Args:
+                list_objs (list): List of instances to be serialized and saved.
+            """
+            filename = cls.__name__ + ".csv"
+            with open(filename, 'w', newline='') as file:
+                writer = csv.writer(file)
+                for obj in list_objs:
+                    if cls.__name__ == "Rectangle":
+                        row = [obj.id, obj.width, obj.height, obj.x, obj.y]
+                    elif cls.__name__ == "Square":
+                        row = [obj.id, obj.size, obj.x, obj.y]
+                    writer.writerow(row)
+
+        @classmethod
+        def load_from_file_csv(cls):
+            """
+            Deserializes instances from a CSV file.
+
+            Returns:
+                list: List of deserialized instances.
+            """
+            filename = cls.__name__ + ".csv"
+            try:
+                with open(filename, 'r') as file:
+                    reader = csv.reader(file)
+                    instances = []
+                    for row in reader:
+                        if cls.__name__ == "Rectangle":
+                            instance = cls(int(row[0]), int(row[1]), int(row[2]), int(row[3]), int(row[4]))
+                        elif cls.__name__ == "Square":
+                            instance = cls(int(row[0]), int(row[1]), int(row[2]), int(row[3]))
+                        instances.append(instance)
+                    return instances
+            except FileNotFoundError:
+                return []
