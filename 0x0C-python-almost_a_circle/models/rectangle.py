@@ -6,6 +6,19 @@ from models.base import Base
 
 
 class Rectangle(Base):
+    """
+    The Rectangle class inherits from the Base class and
+    sets up private instance attributes with public getter and
+    setter methods. It also provides a constructor
+    for initializing instance values.
+
+    Attributes:
+        __width (int): The width of the rectangle.
+        __height (int): The height of the rectangle.
+        __x (int): The x-coordinate of the rectangle's position.
+        __y (int): The y-coordinate of the rectangle's position.
+        id (int): The ID of an instance of this class.
+    """
     def __init__(self, width, height, x=0, y=0, id=None):
         """
         Initializes a Rectangle object.
