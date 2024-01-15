@@ -169,3 +169,19 @@ class Rectangle(Base):
                                                        self.y,
                                                        self.width,
                                                        self.height)
+
+    def update(self, *args, **kwargs):
+        """
+        Update the attributes of the Rectangle instance.
+        Args:
+            *args: Arguments in the order: id, width, height, x, y.
+        """
+        if args:
+            listme = ['id', 'width', 'height', 'x', 'y']
+            i = 0
+            for arg in args:
+                setattr(self, listme[i], arg)
+                i += 1
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
